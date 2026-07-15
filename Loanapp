@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FTCF Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; text-align: right; }
+  </style>
+</head>
+<body class="bg-gray-950 text-white min-h-screen pb-24">
+
+  <main class="max-w-md mx-auto p-4 space-y-6">
+    <!-- Tab 1: Home -->
+    <div id="tab-home" class="tab-content space-y-4">
+      <div class="bg-gradient-to-br from-emerald-600 to-teal-800 p-6 rounded-3xl">
+        <p class="text-xs uppercase">Total Trust Assets</p>
+        <h2 id="total-assets" class="text-3xl font-extrabold mt-1">Loading...</h2>
+      </div>
+      <div class="bg-gray-900 p-5 rounded-2xl border border-gray-800">
+        <h3 class="text-sm font-bold text-gray-400 mb-4 uppercase">Asset Allocation</h3>
+        <div class="space-y-4">
+          <div><div class="flex justify-between text-xs mb-1"><span>💀 Death Support</span><span>Rs. 10,350</span></div><div class="w-full bg-gray-800 h-2 rounded-full"><div class="bg-red-500 h-full w-[30%]"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>🏥 Illness Relief</span><span>Rs. 8,625</span></div><div class="w-full bg-gray-800 h-2 rounded-full"><div class="bg-orange-500 h-full w-[25%]"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>💍 Marriage Support</span><span>Rs. 8,625</span></div><div class="w-full bg-gray-800 h-2 rounded-full"><div class="bg-blue-500 h-full w-[25%]"></div></div></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>🚨 Emergency Fund</span><span>Rs. 6,900</span></div><div class="w-full bg-gray-800 h-2 rounded-full"><div class="bg-yellow-500 h-full w-[20%]"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Loans -->
+    <div id="tab-loans" class="tab-content hidden space-y-4">
+      <div class="bg-gray-900 p-5 rounded-2xl border border-gray-800">
+        <h3 class="text-sm font-bold text-emerald-400 mb-4 uppercase">Loan Takers List</h3>
+        <div id="loan-list" class="space-y-3 text-xs">
+          <!-- Data fetch ho kar yahan aayega -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Rules -->
+    <div id="tab-rules" class="tab-content hidden space-y-4">
+      <div class="bg-gray-900 p-3 rounded-xl border border-emerald-500/20 urdu-text text-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
+      <div class="bg-gray-900 p-3 rounded-xl border border-red-500/20 urdu-text text-sm">ایک سال تک کسی بھی کیٹیگری پر کوئی رقم خرچ نہیں کی جائے گی۔</div>
+      <div class="bg-gray-900 p-3 rounded-xl border border-blue-500/20 urdu-text text-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
+      <div class="bg-gray-900 p-3 rounded-xl border border-yellow-500/20 urdu-text text-sm">قرض کا قاعدہ: دو افراد سے زیادہ کو قرض دینے کے لیے مینجمنٹ باہمی مشاورت سے فیصلہ کرے گی۔</div>
+    </div>
+
+    <!-- Tab 4: Application -->
+    <div id="tab-help" class="tab-content hidden space-y-4">
+      <div class="bg-gray-900 p-5 rounded-2xl border border-gray-800">
+        <h3 class="text-sm font-bold text-gray-400 mb-4 uppercase text-center">Loan Application</h3>
+        <input type="text" id="app-name" placeholder="Naam" class="w-full bg-gray-950 p-3 mb-2 rounded-xl border border-gray-800 text-sm">
+        <input type="number" id="app-amount" placeholder="Amount (Rs)" class="w-full bg-gray-950 p-3 mb-2 rounded-xl border border-gray-800 text-sm">
+        <textarea id="app-reason" placeholder="Waja..." class="w-full bg-gray-950 p-3 mb-4 rounded-xl border border-gray-800 text-sm"></textarea>
+        <button onclick="sendApp()" class="w-full bg-emerald-600 p-3 rounded-xl font-bold">Submit Application</button>
+      </div>
+    </div>
+  </main>
+
+  <nav class="fixed bottom-0 w-full max-w-md bg-gray-950 border-t border-gray-800 flex justify-around p-3">
+    <button onclick="switchTab('home')" class="text-emerald-400 text-xs"><i class="fa-solid fa-house block mb-1"></i>Home</button>
+    <button onclick="switchTab('loans')" class="text-gray-400 text-xs"><i class="fa-solid fa-hand-holding-dollar block mb-1"></i>Loans</button>
+    <button onclick="switchTab('rules')" class="text-gray-400 text-xs"><i class="fa-solid fa-shield block mb-1"></i>Rules</button>
+    <button onclick="switchTab('help')" class="text-gray-400 text-xs"><i class="fa-solid fa-question block mb-1"></i>Help</button>
+  </nav>
+
+  <script>
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS_WWYTnSqpxFX6n-Q5XVazOiUhERoLiS4VF7pbK_QVvQGW_qMfWhbtGW4nk_Dm1U7YJxde57vYGIrl/pub?output=csv';
+
+    async function fetchData() {
+      try {
+        const response = await fetch(csvUrl);
+        const data = await response.text();
+        const rows = data.split('\n');
+        
+        // Update Total Assets (Row 2, Column 1)
+        const row2 = rows[1].split(',');
+        document.getElementById('total-assets').innerText = 'Rs. ' + row2[0];
+
+        // Update Loan List (Start from Row 2 of "Loan_Takers" sheet logic)
+        const loanList = document.getElementById('loan-list');
+        loanList.innerHTML = "";
+        for(let i = 1; i < rows.length; i++) {
+           let cols = rows[i].split(',');
+           if(cols[0]) {
+             loanList.innerHTML += `<div class="flex justify-between border-b border-gray-800 pb-2"><span>${cols[0]}</span><span class="font-bold">Rs. ${cols[1]}</span><span class="${cols[2]=='Paid' ? 'text-emerald-400' : 'text-red-400'}">${cols[2]}</span></div>`;
+           }
+        }
+      } catch (e) {
+        document.getElementById('total-assets').innerText = "Error loading data";
+      }
+    }
+
+    function switchTab(id) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById('tab-' + id).classList.remove('hidden');
+    }
+
+    function sendApp() {
+      const n = document.getElementById('app-name').value;
+      const a = document.getElementById('app-amount').value;
+      const r = document.getElementById('app-reason').value;
+      if(n && a && r) window.open(`https://wa.me/923422735966?text=Name: ${n}, Amount: ${a}, Reason: ${r}`, '_blank');
+      else alert("برائے مہربانی تمام تفصیلات درج کریں!");
+    }
+
+    window.onload = fetchData;
+  </script>
+</body>
+</html>
