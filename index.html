@@ -18,7 +18,6 @@
 <body class="pb-28">
 
   <script>
-    // Manual Update Data Here
     const data = {
         totalBalance: "34,500",
         activeLoans: "0",
@@ -32,13 +31,12 @@
   </script>
 
   <main class="max-w-md mx-auto p-4 space-y-6">
-    <!-- Header -->
     <div class="flex justify-between items-center py-2">
         <h1 class="font-bold text-xl text-gray-800">FTCF LOAN PORTAL</h1>
         <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">F</div>
     </div>
 
-    <!-- Tab 1: Home -->
+    <!-- Home Tab -->
     <div id="tab-home" class="tab-content active space-y-4">
         <div class="grid grid-cols-2 gap-4">
             <div class="bg-emerald-900 p-5 rounded-3xl text-white shadow-xl">
@@ -59,13 +57,11 @@
             <div class="space-y-4">
                 <div><div class="flex justify-between text-xs mb-1"><span>Death Support</span><span>30%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-red-500 w-[30%] rounded-full"></div></div></div>
                 <div><div class="flex justify-between text-xs mb-1"><span>Illness Relief</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-orange-500 w-[25%] rounded-full"></div></div></div>
-                <div><div class="flex justify-between text-xs mb-1"><span>Marriage Support</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-blue-500 w-[25%] rounded-full"></div></div></div>
-                <div><div class="flex justify-between text-xs mb-1"><span>Emergency Fund</span><span>20%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-yellow-500 w-[20%] rounded-full"></div></div></div>
             </div>
         </div>
     </div>
 
-    <!-- Tab 2: Loans -->
+    <!-- Loan Tab -->
     <div id="tab-loans" class="tab-content space-y-4">
         <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
             <h3 class="font-bold mb-4">Loan Takers List</h3>
@@ -79,20 +75,21 @@
         </div>
     </div>
 
-    <!-- Tab 3: Rules -->
+    <!-- Rules Tab -->
     <div id="tab-rules" class="tab-content space-y-4 urdu-text text-right">
         <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-            <h3 class="font-bold mb-2">FTCF ब्रीफिंग</h3>
-            <p class="text-sm text-gray-600">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔"
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">ایک سال تک کسی بھی کیٹیگری پر کوئی رقم خرچ نہیں کی جائے گی۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">قرض کا قاعدہ: دو افراد سے زیادہ کو قرض دینے کے لیے مینجمنٹ باہمی مشاورت سے فیصلہ کرے گی۔</div>
+            <h3 class="font-bold mb-2">ایف ٹی سی ایف (FTCF) تعارف</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔"  ۔</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
     </div>
 
-    <!-- Tab 4: Help -->
+    <!-- Help Tab (Loan Form) -->
     <div id="tab-help" class="tab-content space-y-4">
         <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+            <h3 class="font-bold mb-4 text-center">Loan Application</h3>
             <input type="text" id="n" placeholder="Name" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
             <input type="number" id="a" placeholder="Amount" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
             <textarea id="r" placeholder="Reason" class="w-full p-3 mb-4 rounded-xl bg-gray-50 border text-sm"></textarea>
@@ -120,7 +117,7 @@
       const n = document.getElementById('n').value;
       const a = document.getElementById('a').value;
       const r = document.getElementById('r').value;
-      window.open(`https://wa.me/923433052346?text=New Loan App: Name: ${n}, Amount: ${a}, Reason: ${r}`, '_blank');
+      window.open(`https://wa.me/923433052346?text=New Loan Application%0AName: ${n}%0AAmount: ${a}%0AReason: ${r}`, '_blank');
     }
   </script>
 </body>
