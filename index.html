@@ -75,6 +75,47 @@
     }
   </script>
 </body>
+</html>    <div class="bg-[#064e3b] text-white p-7 rounded-[30px] shadow-2xl shadow-emerald-200 mb-6 relative overflow-hidden">
+        <p class="text-emerald-300 text-xs uppercase tracking-widest font-semibold mb-1">کل اثاثے</p>
+        <h2 class="text-4xl font-bold mb-6">Rs. <script>document.write(data.totalAssets)</script></h2>
+        <div class="flex justify-between items-end">
+            <span class="text-emerald-200 text-xs">FTCF فیملی ٹرسٹ</span>
+            <span class="urdu-font text-2xl opacity-60">امانت</span>
+        </div>
+    </div>
+
+    <div id="tab-home" class="tab-content active">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100"><p class="text-[10px] text-gray-400">ان فلو (Inflow)</p><p class="font-bold">Rs. <script>document.write(data.inflow)</script></p></div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100"><p class="text-[10px] text-gray-400">آؤٹ فلو (Outflow)</p><p class="font-bold">Rs. <script>document.write(data.outflow)</script></p></div>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 flex justify-between items-center">
+            <div><p class="text-sm font-bold">Monthly Contribution</p><p class="text-[10px] text-gray-400">July 2026</p></div>
+            <span class="font-bold text-emerald-700">Rs. <script>document.write(data.monthlyContribution)</script></span>
+        </div>
+    </div>
+
+    <div id="tab-loans" class="tab-content"><div class="bg-white p-6 rounded-2xl shadow-sm text-center text-gray-400">کوئی قرض موجود نہیں ہے۔</div></div>
+    <div id="tab-rules" class="tab-content"><div class="bg-white p-6 rounded-2xl shadow-sm urdu-font text-right leading-loose">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div></div>
+    <div id="tab-help" class="tab-content"><div class="bg-white p-6 rounded-2xl shadow-sm"><input class="w-full p-3 bg-gray-50 rounded-xl mb-3 text-sm" placeholder="نام"><button class="w-full bg-emerald-800 text-white p-3 rounded-xl font-bold">درخواست بھیجیں</button></div></div>
+  </main>
+
+  <nav class="fixed bottom-6 left-6 right-6 glass rounded-2xl p-2 flex justify-around shadow-xl border border-gray-100">
+    <button onclick="showTab('home', this)" class="nav-btn p-3 rounded-xl active-nav"><i class="fa-solid fa-house"></i></button>
+    <button onclick="showTab('loans', this)" class="nav-btn p-3 rounded-xl text-gray-400"><i class="fa-solid fa-credit-card"></i></button>
+    <button onclick="showTab('rules', this)" class="nav-btn p-3 rounded-xl text-gray-400"><i class="fa-solid fa-file-shield"></i></button>
+    <button onclick="showTab('help', this)" class="nav-btn p-3 rounded-xl text-gray-400"><i class="fa-solid fa-paper-plane"></i></button>
+  </nav>
+
+  <script>
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+      document.getElementById('tab-' + id).classList.add('active');
+      btn.classList.add('active-nav');
+    }
+  </script>
+</body>
 </html>
         <div class="flex justify-between items-center mt-4">
             <span class="text-[10px] text-emerald-300">FTCF FAMILY TRUST</span>
