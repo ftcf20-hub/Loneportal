@@ -3,88 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FTCF PORTAL</title>
+  <title>FTCF LOAN PORTAL</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
-    body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Nastaliq+Urdu&display=swap');
+    body { font-family: 'Poppins', sans-serif; background-color: #f4f7f6; }
+    .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
-    .nav-active { color: #059669 !important; }
+    .nav-active { color: #064e3b !important; }
   </style>
 </head>
-<body class="pb-24">
+<body class="pb-28">
+
+  <script>
+    // Manual Update Data Here
+    const data = {
+        totalBalance: "34,500",
+        activeLoans: "0",
+        inflow: "11,500",
+        outflow: "0",
+        loanTakers: [
+            { name: "unknown", amount: "00", status: "Paid" },
+            { name: "unknown", amount: "00", status: "Paid" }
+        ]
+    };
+  </script>
 
   <main class="max-w-md mx-auto p-4 space-y-6">
     <!-- Header -->
-    <div class="flex items-center justify-between mt-2">
-        <div><h1 class="font-bold text-xl text-gray-800">FTCF PORTAL</h1><p class="text-xs text-gray-500">Mughal Brothers</p></div>
-        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center font-bold text-emerald-800">F</div>
+    <div class="flex justify-between items-center py-2">
+        <h1 class="font-bold text-xl text-gray-800">FTCF LOAN PORTAL</h1>
+        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">F</div>
     </div>
 
     <!-- Tab 1: Home -->
     <div id="tab-home" class="tab-content active space-y-4">
-      <div class="bg-gradient-to-r from-emerald-800 to-emerald-950 p-6 rounded-[24px] text-white shadow-lg">
-        <p class="text-emerald-200 text-xs uppercase tracking-widest">Total Trust Assets</p>
-        <h2 class="text-3xl font-extrabold mt-1">Rs. 34,500</h2>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4">
-        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm"><p class="text-[10px] text-gray-400 uppercase">Inflow</p><p class="font-bold text-emerald-600">Rs. 11,500</p></div>
-        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm"><p class="text-[10px] text-gray-400 uppercase">Outflow</p><p class="font-bold text-red-600">Rs. 00</p></div>
-      </div>
-
-      <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-        <h3 class="text-xs font-bold text-gray-400 mb-4 uppercase">Asset Allocation</h3>
-        <div class="space-y-4">
-          <div><div class="flex justify-between text-xs mb-1 font-semibold"><span>💀 Death Support</span><span>30%</span></div><div class="w-full bg-gray-100 h-2 rounded-full"><div class="bg-red-500 h-full w-[30%] rounded-full"></div></div></div>
-          <div><div class="flex justify-between text-xs mb-1 font-semibold"><span>🏥 Illness Relief</span><span>25%</span></div><div class="w-full bg-gray-100 h-2 rounded-full"><div class="bg-orange-500 h-full w-[25%] rounded-full"></div></div></div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-emerald-900 p-5 rounded-3xl text-white shadow-xl">
+                <p class="text-[10px] opacity-70 uppercase">Total Balance</p>
+                <h2 class="font-bold text-lg">Rs. <script>document.write(data.totalBalance)</script></h2>
+            </div>
+            <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm">
+                <p class="text-[10px] text-gray-400 uppercase">Active Loans</p>
+                <h2 class="font-bold text-lg text-gray-800"><script>document.write(data.activeLoans)</script></h2>
+            </div>
         </div>
-      </div>
+        <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-4 rounded-2xl border border-gray-100"><p class="text-[10px] text-gray-400 uppercase">Inflow</p><p class="font-bold text-emerald-600">Rs. <script>document.write(data.inflow)</script></p></div>
+            <div class="bg-white p-4 rounded-2xl border border-gray-100"><p class="text-[10px] text-gray-400 uppercase">Outflow</p><p class="font-bold text-red-600">Rs. <script>document.write(data.outflow)</script></p></div>
+        </div>
+        <div class="bg-white p-5 rounded-3xl border border-gray-100">
+            <h3 class="text-xs font-bold text-gray-400 mb-4 uppercase">Allocation</h3>
+            <div class="space-y-4">
+                <div><div class="flex justify-between text-xs mb-1"><span>Death Support</span><span>30%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-red-500 w-[30%] rounded-full"></div></div></div>
+                <div><div class="flex justify-between text-xs mb-1"><span>Illness Relief</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-orange-500 w-[25%] rounded-full"></div></div></div>
+                <div><div class="flex justify-between text-xs mb-1"><span>Marriage Support</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-blue-500 w-[25%] rounded-full"></div></div></div>
+                <div><div class="flex justify-between text-xs mb-1"><span>Emergency Fund</span><span>20%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-yellow-500 w-[20%] rounded-full"></div></div></div>
+            </div>
+        </div>
     </div>
 
     <!-- Tab 2: Loans -->
     <div id="tab-loans" class="tab-content space-y-4">
-      <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-        <h3 class="text-sm font-bold text-emerald-600 mb-4 uppercase">Loan Takers List</h3>
-        <p class="text-sm text-gray-500">No active loans.</p>
-      </div>
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+            <h3 class="font-bold mb-4">Loan Takers List</h3>
+            <div id="loan-list" class="space-y-3">
+                <script>
+                    data.loanTakers.forEach(l => {
+                        document.write(`<div class="flex justify-between text-sm border-b pb-2"><span>${l.name}</span><span class="font-bold">Rs. ${l.amount}</span><span class="${l.status === 'Paid' ? 'text-green-500' : 'text-red-500'}">${l.status}</span></div>`);
+                    });
+                </script>
+            </div>
+        </div>
     </div>
 
     <!-- Tab 3: Rules -->
-    <div id="tab-rules" class="tab-content space-y-4">
-      <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">Loan will be issued after returning previous one.</div>
-      <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">Death support is a grant, not a loan.</div>
+    <div id="tab-rules" class="tab-content space-y-4 urdu-text text-right">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+            <h3 class="font-bold mb-2">FTCF ब्रीफिंग</h3>
+            <p class="text-sm text-gray-600">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔"
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">ایک سال تک کسی بھی کیٹیگری پر کوئی رقم خرچ نہیں کی جائے گی۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm">قرض کا قاعدہ: دو افراد سے زیادہ کو قرض دینے کے لیے مینجمنٹ باہمی مشاورت سے فیصلہ کرے گی۔</div>
     </div>
 
-    <!-- Tab 4: Application -->
+    <!-- Tab 4: Help -->
     <div id="tab-help" class="tab-content space-y-4">
-      <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-        <h3 class="text-sm font-bold text-gray-600 mb-4 uppercase text-center">Loan Application</h3>
-        <input type="text" id="app-name" placeholder="Name" class="w-full bg-gray-50 p-3 mb-2 rounded-xl border text-sm">
-        <button onclick="sendApp()" class="w-full bg-emerald-700 text-white p-3 rounded-xl font-bold">Submit</button>
-      </div>
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+            <input type="text" id="n" placeholder="Name" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
+            <input type="number" id="a" placeholder="Amount" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
+            <textarea id="r" placeholder="Reason" class="w-full p-3 mb-4 rounded-xl bg-gray-50 border text-sm"></textarea>
+            <button onclick="send()" class="w-full bg-emerald-900 text-white p-3 rounded-xl font-bold">Submit Application</button>
+        </div>
+        <p class="text-center text-[10px] text-gray-400">@ftcf2026 - Founders: Mughal Brothers</p>
     </div>
   </main>
 
-  <!-- Bottom Nav -->
-  <nav class="fixed bottom-0 w-full max-w-md bg-white border-t flex justify-around p-4 shadow-2xl">
-    <button onclick="showTab('home', this)" class="nav-btn nav-active text-xs"><i class="fa-solid fa-house block mb-1"></i>Home</button>
-    <button onclick="showTab('loans', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-hand-holding-dollar block mb-1"></i>Loans</button>
-    <button onclick="showTab('rules', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-shield block mb-1"></i>Rules</button>
-    <button onclick="showTab('help', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-question block mb-1"></i>Help</button>
+  <nav class="fixed bottom-4 left-4 right-4 bg-white rounded-2xl shadow-2xl p-3 flex justify-around">
+    <button onclick="show('home', this)" class="nav-btn nav-active text-xs"><i class="fa-solid fa-house block mb-1"></i>Home</button>
+    <button onclick="show('loans', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-list block mb-1"></i>Loans</button>
+    <button onclick="show('rules', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-shield block mb-1"></i>Rules</button>
+    <button onclick="show('help', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-paper-plane block mb-1"></i>Help</button>
   </nav>
 
   <script>
-    function showTab(id, btn) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('nav-active'));
+    function show(id, btn) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active'));
       document.getElementById('tab-' + id).classList.add('active');
       btn.classList.add('nav-active');
     }
-    function sendApp() {
-      alert("Application Submitted!");
+    function send() {
+      const n = document.getElementById('n').value;
+      const a = document.getElementById('a').value;
+      const r = document.getElementById('r').value;
+      window.open(`https://wa.me/923422735966?text=New Loan App: Name: ${n}, Amount: ${a}, Reason: ${r}`, '_blank');
     }
   </script>
 </body>
