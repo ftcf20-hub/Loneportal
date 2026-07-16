@@ -24,8 +24,7 @@
         inflow: "11,500",
         outflow: "0",
         loanTakers: [
-            { name: "unknown", amount: "00", status: "Paid" },
-            { name: "unknown", amount: "00", status: "Paid" }
+            { name: "---", amount: "00", status: "Paid" }
         ]
     };
   </script>
@@ -48,18 +47,14 @@
                 <h2 class="font-bold text-lg text-gray-800"><script>document.write(data.activeLoans)</script></h2>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white p-4 rounded-2xl border border-gray-100"><p class="text-[10px] text-gray-400 uppercase">Inflow</p><p class="font-bold text-emerald-600">Rs. <script>document.write(data.inflow)</script></p></div>
-            <div class="bg-white p-4 rounded-2xl border border-gray-100"><p class="text-[10px] text-gray-400 uppercase">Outflow</p><p class="font-bold text-red-600">Rs. <script>document.write(data.outflow)</script></p></div>
-        </div>
+        
         <div class="bg-white p-5 rounded-3xl border border-gray-100">
             <h3 class="text-xs font-bold text-gray-400 mb-4 uppercase">Allocation</h3>
             <div class="space-y-4">
                 <div><div class="flex justify-between text-xs mb-1"><span>Death Support</span><span>30%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-red-500 w-[30%] rounded-full"></div></div></div>
                 <div><div class="flex justify-between text-xs mb-1"><span>Illness Relief</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-orange-500 w-[25%] rounded-full"></div></div></div>
-              <div><div class="flex justify-between text-xs mb-1"><span>Marriage fund</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-red-500 w-[30%] rounded-full"></div></div></div>
-              <div><div class="flex justify-between text-xs mb-1"><span>Reserve Fund</span><span>20%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-red-500 w-[30%] rounded-full"></div></div></div>
-              
+                <div><div class="flex justify-between text-xs mb-1"><span>Marriage Fund</span><span>25%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-blue-500 w-[25%] rounded-full"></div></div></div>
+                <div><div class="flex justify-between text-xs mb-1"><span>Reserve Fund</span><span>20%</span></div><div class="h-2 bg-gray-100 rounded-full"><div class="h-full bg-emerald-500 w-[20%] rounded-full"></div></div></div>
             </div>
         </div>
     </div>
@@ -71,7 +66,7 @@
             <div id="loan-list" class="space-y-3">
                 <script>
                     data.loanTakers.forEach(l => {
-                        document.write(`<div class="flex justify-between text-sm border-b pb-2"><span>${l.name}</span><span class="font-bold">Rs. ${l.amount}</span><span class="${l.status === 'Paid' ? 'text-green-500' : 'text-red-500'}">${l.status}</span></div>`);
+                        document.write(`<div class="flex justify-between text-sm border-b pb-2"><span>${l.name}</span><span class="font-bold">Rs. ${l.amount}</span><span class="${l.status === 'Paid' ? 'text-green-500' : 'text-red-500'} font-bold">${l.status}</span></div>`);
                     });
                 </script>
             </div>
@@ -80,16 +75,13 @@
 
     <!-- Rules Tab -->
     <div id="tab-rules" class="tab-content space-y-4 urdu-text text-right">
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-            <h3 class="font-bold mb-2">ایف ٹی سی ایف (FTCF) تعارف</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔"  ۔</p>
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 leading-relaxed">
+            <h3 class="font-bold mb-2 text-center">ایف ٹی سی ایف (FTCF) تعارف</h3>
+            <p class="text-sm text-gray-600">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔</p>
         </div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
     </div>
 
-    <!-- Help Tab (Loan Form) -->
+    <!-- Help Tab -->
     <div id="tab-help" class="tab-content space-y-4">
         <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
             <h3 class="font-bold mb-4 text-center">Loan Application</h3>
@@ -98,12 +90,11 @@
             <textarea id="r" placeholder="Reason" class="w-full p-3 mb-4 rounded-xl bg-gray-50 border text-sm"></textarea>
             <button onclick="send()" class="w-full bg-emerald-900 text-white p-3 rounded-xl font-bold">Submit Application</button>
         </div>
-        <p class="text-center text-[10px] text-gray-400">@ftcf2026 - Founders: Mughal Brothers</p>
     </div>
   </main>
 
   <nav class="fixed bottom-4 left-4 right-4 bg-white rounded-2xl shadow-2xl p-3 flex justify-around">
-    <button onclick="show('home', this)" class="nav-btn nav-active text-xs"><i class="fa-solid fa-house block mb-1"></i>Home</button>
+    <button onclick="show('home', this)" class="nav-btn nav-active text-xs text-gray-400"><i class="fa-solid fa-house block mb-1"></i>Home</button>
     <button onclick="show('loans', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-list block mb-1"></i>Loans</button>
     <button onclick="show('rules', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-shield block mb-1"></i>Rules</button>
     <button onclick="show('help', this)" class="nav-btn text-gray-400 text-xs"><i class="fa-solid fa-paper-plane block mb-1"></i>Help</button>
@@ -112,14 +103,15 @@
   <script>
     function show(id, btn) {
       document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active'));
+      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('nav-active', 'text-emerald-900'));
       document.getElementById('tab-' + id).classList.add('active');
-      btn.classList.add('nav-active');
+      btn.classList.add('nav-active', 'text-emerald-900');
     }
     function send() {
       const n = document.getElementById('n').value;
       const a = document.getElementById('a').value;
       const r = document.getElementById('r').value;
+      if(!n || !a) { alert("Please fill details"); return; }
       window.open(`https://wa.me/923433052346?text=New Loan Application%0AName: ${n}%0AAmount: ${a}%0AReason: ${r}`, '_blank');
     }
   </script>
