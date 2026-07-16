@@ -16,7 +16,6 @@
 
   <script>
     const data = {
-        totalBalance: "34,500",
         activeLoans: "0",
         inflow: "11,500",
         outflow: "0",
@@ -28,26 +27,23 @@
   </script>
 
   <main class="max-w-md mx-auto p-4 space-y-6">
+    <!-- Header -->
     <div class="flex justify-between items-center py-2">
         <h1 class="font-bold text-xl text-gray-800">FTCF LOAN PORTAL</h1>
         <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">F</div>
     </div>
 
-    <div class="grid grid-cols-2 gap-4">
-        <div class="bg-emerald-900 p-5 rounded-3xl text-white shadow-xl">
-            <p class="text-[10px] opacity-70 uppercase">Total Balance</p>
-            <h2 class="font-bold text-lg">Rs. <script>document.write(data.totalBalance)</script></h2>
-        </div>
-        <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm">
+    <!-- Dashboard -->
+    <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-3 bg-white p-5 rounded-3xl border border-gray-100 shadow-sm text-center">
             <p class="text-[10px] text-gray-400 uppercase">Active Loans</p>
             <h2 class="font-bold text-lg text-gray-800"><script>document.write(data.activeLoans)</script></h2>
         </div>
-    </div>
-    <div class="grid grid-cols-2 gap-4">
-        <div class="bg-white p-4 rounded-2xl border border-gray-100"><p class="text-[10px] text-gray-400 uppercase">Inflow</p><p class="font-bold text-emerald-600">Rs. <script>document.write(data.inflow)</script></p></div>
-        <div class="bg-white p-4 rounded-2xl border border-gray-100"><p class="text-[10px] text-gray-400 uppercase">Outflow</p><p class="font-bold text-red-600">Rs. <script>document.write(data.outflow)</script></p></div>
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 text-center"><p class="text-[10px] text-gray-400 uppercase">Inflow</p><p class="font-bold text-emerald-600">Rs. <script>document.write(data.inflow)</script></p></div>
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 text-center"><p class="text-[10px] text-gray-400 uppercase">Outflow</p><p class="font-bold text-red-600">Rs. <script>document.write(data.outflow)</script></p></div>
     </div>
 
+    <!-- Loan List -->
     <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
         <h3 class="font-bold mb-4">Loan Takers List</h3>
         <div id="loan-list" class="space-y-3">
@@ -59,15 +55,17 @@
         </div>
     </div>
 
+    <!-- Rules -->
     <div class="space-y-3 urdu-text text-right">
         <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
             <h3 class="font-bold mb-2">ایف ٹی سی ایف (FTCF) تعارف</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔"  ۔</p>
+            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔</p>
         </div>
         <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
         <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
     </div>
 
+    <!-- Loan Application Form -->
     <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
         <h3 class="font-bold mb-4 text-center">Loan Application</h3>
         <input type="text" id="n" placeholder="Name" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
