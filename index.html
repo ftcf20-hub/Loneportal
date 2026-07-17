@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Rules & Loan Application</title>
+  <title>Rules & Loans</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
@@ -17,7 +17,7 @@
   <main class="max-w-md mx-auto p-4 space-y-6">
     <!-- Header -->
     <div class="flex justify-between items-center py-4">
-        <h1 class="font-bold text-2xl text-gray-800 tracking-tight">Portal</h1>
+        <h1 class="font-bold text-2xl text-gray-800 tracking-tight">Rules & Loan Application</h1>
         <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">F</div>
     </div>
 
@@ -41,13 +41,26 @@
     <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
         <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fas fa-list text-emerald-700"></i> Loan Takers</h3>
         <div id="loan-list" class="space-y-3 text-sm text-gray-600">
-             <div class="flex justify-between items-center border-b pb-2"><span>-</span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
+             <div class="flex justify-between items-center border-b pb-2"><span>Member </span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
+             <div class="flex justify-between items-center border-b pb-2"><span>Member </span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
+             <div class="flex justify-between items-center border-b pb-2"><span>Member </span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
         </div>
+    </div>
+
+    <!-- Loan Rules -->
+    <div class="space-y-3 urdu-text text-right">
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+            <h3 class="font-bold mb-2">important Rules</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">دیا گیا قرض 6 ماہ میں آسان اقساط میں واپس کرنا ہو گا۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
+        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
     </div>
 
     <!-- Loan Application Form -->
     <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
-        <h3 class="font-bold text-gray-800 mb-4 text-center">Request New Loan</h3>
+        <h3 class="font-bold text-gray-800 mb-4 text-center">Request For Loan</h3>
         <form id="loanForm" class="space-y-3">
             <input type="text" id="n" placeholder="Name" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" required>
             <input type="number" id="a" placeholder="Amount" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" required>
