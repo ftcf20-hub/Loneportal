@@ -3,79 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FTCF LOAN PORTAL</title>
+  <title> Rules & Loan Application</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Nastaliq+Urdu&display=swap');
-    body { font-family: 'Poppins', sans-serif; background-color: #f4f7f6; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
     .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; }
   </style>
 </head>
 <body class="pb-10">
 
-  <script>
-    const data = {
-        activeLoans: "0",
-        inflow: "11,500",
-        outflow: "0",
-        loanTakers: [
-            { name: "unknown", amount: "00", status: "Paid" },
-            { name: "unknown", amount: "00", status: "Paid" }
-        ]
-    };
-  </script>
-
   <main class="max-w-md mx-auto p-4 space-y-6">
     <!-- Header -->
-    <div class="flex justify-between items-center py-2">
-        <h1 class="font-bold text-xl text-gray-800">FTCF LOAN PORTAL</h1>
-        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-800 font-bold">F</div>
+    <div class="flex justify-between items-center py-4">
+        <h1 class="font-bold text-2xl text-gray-800 tracking-tight">Portal</h1>
+        <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">F</div>
     </div>
 
-    <!-- Dashboard -->
-    <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-3 bg-white p-5 rounded-3xl border border-gray-100 shadow-sm text-center">
-            <p class="text-[10px] text-gray-400 uppercase">Active Loans</p>
-            <h2 class="font-bold text-lg text-gray-800"><script>document.write(data.activeLoans)</script></h2>
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-3">
+        <div class="col-span-3 bg-gradient-to-br from-emerald-800 to-emerald-950 p-6 rounded-3xl text-white shadow-lg text-center">
+            <p class="text-emerald-300 text-xs uppercase tracking-widest mb-1">Active Loans</p>
+            <h2 class="font-bold text-3xl">0</h2>
         </div>
-        <div class="bg-white p-4 rounded-2xl border border-gray-100 text-center"><p class="text-[10px] text-gray-400 uppercase">Inflow</p><p class="font-bold text-emerald-600">Rs. <script>document.write(data.inflow)</script></p></div>
-        <div class="bg-white p-4 rounded-2xl border border-gray-100 text-center"><p class="text-[10px] text-gray-400 uppercase">Outflow</p><p class="font-bold text-red-600">Rs. <script>document.write(data.outflow)</script></p></div>
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm text-center">
+            <p class="text-[10px] text-gray-400 uppercase">Inflow</p>
+            <p class="font-bold text-emerald-600 text-sm">Rs. 11,500</p>
+        </div>
+        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm text-center">
+            <p class="text-[10px] text-gray-400 uppercase">Outflow</p>
+            <p class="font-bold text-red-500 text-sm">Rs. 0</p>
+        </div>
     </div>
 
     <!-- Loan List -->
     <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-        <h3 class="font-bold mb-4">Loan Takers List</h3>
-        <div id="loan-list" class="space-y-3">
-            <script>
-                data.loanTakers.forEach(l => {
-                    document.write(`<div class="flex justify-between text-sm border-b pb-2"><span>${l.name}</span><span class="font-bold">Rs. ${l.amount}</span><span class="${l.status === 'Paid' ? 'text-green-500' : 'text-red-500'}">${l.status}</span></div>`);
-                });
-            </script>
+        <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fas fa-list text-emerald-700"></i> Loan Takers</h3>
+        <div id="loan-list" class="space-y-3 text-sm text-gray-600">
+             <div class="flex justify-between items-center border-b pb-2"><span>-</span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
         </div>
-    </div>
-
-    <!-- Loan Rules -->
-    <div class="space-y-3 urdu-text text-right">
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-            <h3 class="font-bold mb-2">Loan Rules</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر کر کے دکھانا ہے، ان شاء اللہ۔</p>
-        </div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">دیا گیا قرض 6 ماہ میں آسان اقساط میں واپس کرنا ہو گا۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
     </div>
 
     <!-- Loan Application Form -->
-    <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-        <h3 class="font-bold mb-4 text-center">Loan Application</h3>
-        <input type="text" id="n" placeholder="Name" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
-        <input type="number" id="a" placeholder="Amount" class="w-full p-3 mb-2 rounded-xl bg-gray-50 border text-sm">
-        <textarea id="r" placeholder="Reason" class="w-full p-3 mb-4 rounded-xl bg-gray-50 border text-sm"></textarea>
-        <button onclick="send()" class="w-full bg-emerald-900 text-white p-3 rounded-xl font-bold">Submit Application</button>
+    <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
+        <h3 class="font-bold text-gray-800 mb-4 text-center">Request New Loan</h3>
+        <form id="loanForm" class="space-y-3">
+            <input type="text" id="n" placeholder="Name" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" required>
+            <input type="number" id="a" placeholder="Amount" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" required>
+            <textarea id="r" placeholder="Reason" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" rows="3" required></textarea>
+            <button type="button" onclick="send()" class="w-full bg-emerald-900 hover:bg-emerald-800 text-white p-4 rounded-xl font-bold transition shadow-md">Submit Request</button>
+        </form>
     </div>
-    
-    <p class="text-center text-[10px] text-gray-400">@ftcf2026 - Founders: Mughal Brothers</p>
   </main>
 
   <script>
@@ -83,7 +62,16 @@
       const n = document.getElementById('n').value;
       const a = document.getElementById('a').value;
       const r = document.getElementById('r').value;
-      window.open(`https://wa.me/923433052346?text=New Loan Application%0AName: ${n}%0AAmount: ${a}%0AReason: ${r}`, '_blank');
+      const date = new Date().toLocaleDateString();
+
+      // Validation
+      if (!n || !a || !r) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const msg = `New Loan Application:%0ADate: ${date}%0AName: ${n}%0AAmount: ${a}%0AReason: ${r}`;
+      window.open(`https://wa.me/923433052346?text=${msg}`, '_blank');
     }
   </script>
 </body>
