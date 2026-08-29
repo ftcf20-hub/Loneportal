@@ -1,171 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FTCF Professional Portal</title>
+  <title>FTCF | Modern Financial Portal</title>
+  <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              500: '#10b981',
+              600: '#059669',
+              900: '#064e3b',
+              950: '#022c22'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Nastaliq+Urdu&display=swap');
-    body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
-    .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .urdu-text { font-family: 'Noto Nastaliq Urdu', serif; line-height: 2.2; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.5);
+    }
   </style>
 </head>
-<body class="pb-10">
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen pb-12">
 
   <main class="max-w-md mx-auto p-4 space-y-6">
-    <!-- Header -->
-    <div class="flex justify-between items-center py-4">
-        <h1 class="font-bold text-2xl text-gray-800 tracking-tight">Rules & Loans</h1>
-        <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold shadow-md">F</div>
-    </div>
+    
+    <!-- Modern Header -->
+    <header class="flex justify-between items-center py-3 border-b border-slate-200/60">
+        <div>
+          <span class="text-xs font-semibold text-brand-600 tracking-wider uppercase">2026-2027</span>
+          <h1 class="font-extrabold text-2xl text-slate-900 tracking-tight">Rules & Loans</h1>
+        </div>
+        <div class="w-11 h-11 bg-gradient-to-tr from-brand-600 to-emerald-400 rounded-2xl flex items-center justify-center text-white font-bold shadow-lg shadow-brand-500/20 ring-2 ring-white">
+            FTCF
+        </div>
+    </header>
 
-    <!-- Stats -->
-    <div class="grid grid-cols-3 gap-3">
-        <div class="col-span-3 bg-gradient-to-br from-emerald-800 to-emerald-950 p-6 rounded-3xl text-white shadow-lg text-center">
-            <p class="text-emerald-300 text-xs uppercase tracking-widest mb-1">Active Loans</p>
-            <h2 class="font-bold text-3xl">0</h2>
+    <!-- Stat Highlights (Glass Cards) -->
+    <section class="grid grid-cols-2 gap-3">
+        <div class="col-span-2 bg-gradient-to-br from-brand-950 via-brand-900 to-emerald-900 p-6 rounded-3xl text-white shadow-xl relative overflow-hidden">
+            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+            <div class="flex justify-between items-start">
+              <div>
+                <p class="text-emerald-300 text-xs font-medium uppercase tracking-widest mb-1">Active Loans</p>
+                <h2 class="font-bold text-4xl text-white">0</h2>
+              </div>
+              <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2.5 py-1 rounded-full border border-emerald-500/30">Live Status</span>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm text-center">
-            <p class="text-[10px] text-gray-400 uppercase">Inflow</p>
-            <p class="font-bold text-emerald-600 text-sm">Rs. 11,500</p>
-        </div>
-        <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm text-center">
-            <p class="text-[10px] text-gray-400 uppercase">Outflow</p>
-            <p class="font-bold text-red-500 text-sm">Rs. 0</p>
-        </div>
-    </div>
 
-    <!-- New Button & Scrollable Box -->
+        <div class="glass-card p-4 rounded-2xl shadow-sm border text-left">
+            <p class="text-[11px] text-slate-400 uppercase font-semibold">Inflow</p>
+            <p class="font-bold text-brand-600 text-base mt-1">Rs. 11,500</p>
+        </div>
+
+        <div class="glass-card p-4 rounded-2xl shadow-sm border text-left">
+            <p class="text-[11px] text-slate-400 uppercase font-semibold">Outflow</p>
+            <p class="font-bold text-rose-500 text-base mt-1">Rs. 0</p>
+        </div>
+    </section>
+
+    <!-- Fund Allocations 2026 Layout -->
+    <section class="space-y-3">
+      <h3 class="font-bold text-sm text-slate-700 tracking-wide uppercase px-1">Fund Allocation Framework</h3>
+      <div class="grid grid-cols-2 gap-2.5">
+        <div class="p-3.5 bg-white rounded-2xl border border-slate-100 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-ribbon text-purple-600"></i>
+            <span class="text-[9px] bg-amber-100 text-amber-700 font-bold px-2 py-0.5 rounded-full">Unlock-Apr 2027</span>
+          </div>
+          <p class="text-xs font-bold text-slate-800">Death Assistance</p>
+          <p class="text-xs text-purple-600 font-bold mt-1">30% Share</p>
+        </div>
+        
+        <div class="p-3.5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-notes-medical text-rose-500"></i>
+            <span class="text-[9px] bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full">locked</span>
+          </div>
+          <p class="text-xs font-bold text-slate-800">Medical Aid</p>
+          <p class="text-xs text-rose-500 font-bold mt-1">25% Share</p>
+        </div>
+
+        <div class="p-3.5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-heart text-amber-500"></i>
+            <span class="text-[9px] bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full">Locked</span>
+          </div>
+          <p class="text-xs font-bold text-slate-800">Marriage Support</p>
+          <p class="text-xs text-amber-500 font-bold mt-1">25% Share</p>
+        </div>
+
+        <div class="p-3.5 bg-white rounded-2xl border border-slate-100 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <i class="fas fa-shield-halved text-blue-500"></i>
+            <span class="text-[9px] bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full">Locked</span>
+          </div>
+          <p class="text-xs font-bold text-slate-800">Emergency Reserve</p>
+          <p class="text-xs text-blue-500 font-bold mt-1">20% Share</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Drawer -->
     <div class="space-y-3">
-        <button onclick="document.getElementById('missionBox').classList.toggle('hidden')" class="w-full bg-emerald-600 text-white p-3 rounded-xl font-bold text-sm shadow-md hover:bg-emerald-700 transition">
-            <i class="fas fa-book-open mr-2"></i> Read Mission & Vision
+        <button onclick="toggleMission()" class="w-full bg-slate-900 hover:bg-slate-800 text-white p-3.5 rounded-2xl font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+            <i class="fas fa-book-open text-emerald-400"></i>
+            <span>Read Full Mission & Vision</span>
         </button>
-        <div id="missionBox" class="hidden bg-green-500 p-6 rounded-3xl shadow-sm border border-gray-100 urdu-text text-right h-80 overflow-y-auto">
-            <p class="text-sm text-black leading-relaxed whitespace-pre-line">
-                ہمارا ہدف: مغل برادرز نیٹ ورک کو مثالی بنانا
-                ہمارا عزم ہے کہ ہم نے اپنے علاقے میں "مغل برادرز نیٹ ورک" کو ایک مثالی نیٹ ورک بنانا ہے، تاکہ لوگ ہمارے اس فلاحی نظام اور بھائی چارے کی مثال دیں اور ہمارا یہ سیٹ اپ دوسروں کے لیے بھی ایک رول ماڈل بن کر ابھرے۔
+        
+        <div id="missionBox" class="hidden glass-card p-6 rounded-3xl shadow-sm border border-slate-200/80 urdu-text text-right h-80 overflow-y-auto text-slate-700 leading-loose">
+            <p class="text-sm whitespace-pre-line">
+                ہمارا ہدف: فیملی ٹرسٹ نیٹ ورک کو مثالی بنانا
+                ہمارا عزم ہے کہ ہم نے اپنے علاقے میں "فیملی ٹرسٹ" کو ایک مثالی نیٹ ورک بنانا ہے، تاکہ لوگ ہمارے اس فلاحی نظام اور بھائی چارے کی مثال دیں اور ہمارا یہ سیٹ اپ دوسروں کے لیے بھی ایک رول ماڈل بن کر ابھرے۔
 
                 یہ ہم سب کی فاؤنڈیشن ہے (ہمارا عہد)
-                یہ فاؤنڈیشن ہم سب بھائیوں اور ممبران کی اپنی مشترکہ فاؤنڈیشن ہے اور ہم سب نے ہی مل کر اسے کامیاب بنانا ہے۔ اس کا سب سے بڑا مقصد یہ ہے کہ کل کو ہمارا کوئی بھی بھائی یا فیملی ممبر کسی بھی مصیبت، پریشانی یا ضرورت کے وقت خود کو اکیلا نہ پائے۔ جب ہم سب ایک دوسرے کا بازو بنیں گے، تو ہر مشکل آسان ہو جائے گی۔
+                یہ فاؤنڈیشن ہم سب ممبران کی اپنی مشترکہ فاؤنڈیشن ہے اور ہم سب نے ہی مل کر اسے کامیاب بنانا ہے۔ اس کا سب سے بڑا مقصد یہ ہے کہ کل کو ہمارا کوئی بھی فیملی ممبر کسی بھی مصیبت، پریشانی یا ضرورت کے وقت خود کو اکیلا نہ پائے۔
 
                 ہمارا وژن: خاندان سے آگے، ایک رجسٹرڈ ادارہ
-                ہم اس فاؤنڈیشن کو صرف اپنے خاندان تک محدود نہیں رکھنا چاہتے۔ ہمارا اصل مقصد اور عزم یہ ہے کہ آگے چل کر ہم اسے باقاعدہ ایک رجسٹرڈ آرگنائزیشن (NGO) بنائیں گے، تاکہ دائرہ کار کو وسیع کر کے ہر بے سہارا اور مددگار کا حقیقی سہارا بن سکیں اور وسیع پیمانے پر لوگوں کی خدمت کر سکیں۔
-
-                آپ کا ساتھ اور اعتماد (سب سے بڑی طاقت)
-                یہ سب کچھ کرنے کے لیے اور فاؤنڈیشن کو اس کے اصل مقام تک پہنچانے کے لیے، ہمیں آپ سب بھائیوں کے ساتھ، تعاون اور اعتماد کی سب سے زیادہ ضرورت ہے۔ آپ بھائیوں کا یہ بھروسہ ہی ہماری سب سے بڑی طاقت ہے جو ہمیں آگے بڑھنے اور اس نظام کو مضبوط بنانے کا حوصلہ دیتا ہے۔
-
-                کا بنیادی مقصد (اصل مقصد) FTCF
-                خاندان میں شفافیت، برابری اور اجتماعی مدد کا ایسا نظام قائم کرنا جہاں:
-                مشکل وقت، بیماری، شادی بیاہ یا کسی بھی ایمرجنسی میں خاندان کے کسی رکن کو باہر کسی کے آگے ہاتھ نہ پھیلانا پڑے اور نہ ہی ادھار لینا پڑے۔
-                تمام ممبران مل کر جو ماہانہ فنڈ جمع کرتے ہیں، اس کا مقصد ایک مضبوط فیملی بینک بنانا ہے تاکہ ضرورت کے وقت فوری اور باعزت طریقے سے مالی تعاون فراہم کیا جا سکے۔ اس نظام کی اصل کامیابی سب کا ایک ساتھ کھڑا ہونا ہے۔
-
-                فنڈ کی 4 اہم کیٹیگریز (Fund Allocation)
-                جمع ہونے والی رقم کو فارمولے کے تحت ان 4 حصوں میں تقسیم رکھا جاتا ہے، جو بینک بیلنس کے مضبوط ہونے کے ساتھ ترتیب وار ان لاک کی جائیں گی:
-                1۔ ڈیتھ اسسٹنس (Death Assistance) — 30% (اپریل 2027 سے فعال)
-                خاندان میں کسی بھی فوتگی کی صورت میں ایمرجنسی اخراجات اور تدفین کے لیے فوری مدد۔
-                2۔ میڈیکل ایڈ (Medical Aid) — 25%
-                ممبر یا فیملی کے علاج معالجے اور ہسپتال کے اخراجات کے لیے۔
-                3۔ میرج سپورٹ (Marriage Support) — 25%
-                بچوں، بہنوں یا بھائیوں کی شادی بیاہ کے اخراجات میں مالی تعاون۔
-                4۔ ایمرجنسی ریزرو (Emergency Reserve) — 20%
-                ناگہانی ضرورت یا ہنگامی لون کے لیے محفوظ فنڈ۔
-                اہم اصول: فاؤنڈیشن کے فنڈ کو رواں رکھنے کے لیے یہ اصول لازمی ہے کہ کسی بھی ممبر کو اگلا لون یا بڑی مدد تبھی ملے گی جب ان کا پچھلا حساب کتاب بالکل کلیئر ہوگا، تاکہ نظام بغیر کسی رکاوٹ کے چلتا رہے۔
-
-                طویل مدتی منصوبہ اور کیٹیگریز کا ان لاک (Unlock) ہونا
-                ہمیں اپنے اس بڑے مقصد کو مکمل طور پر کامیاب کرنے میں کافی عرصہ لگ سکتا ہے، اس لیے ہم نے ایک مضبوط اور محفوظ حکمت عملی بنائی ہے:
-                اپریل 2027 سے ہم فاؤنڈیشن کی پہلی کیٹیگری (ڈیتھ اسسٹنس) کو باقاعدہ شروع کریں گے۔
-                اس کے بعد، جیسے جیسے فاؤنڈیشن کا بینک بیلنس مضبوط اور مستحکم ہوتا جائے گا، ہم باقی کیٹیگریز کو بھی ایک ایک کر کے ان لاک کرتے جائیں گے۔
-                الحمدللہ! اب سب کچھ موبائل ایپ پر لائیو ہے
-                ٹیکنالوجی کے لحاظ سے اب ہم مکمل طور پر ڈیجیٹل ہو چکے ہیں:
-                لائیو ایپ لانچ: فاؤنڈیشن کی آفیشل ایپ (PWA) الحمدللہ کامیابی سے لانچ ہو چکی ہے اور اب ہر بھائی کے موبائل میں موجود ہے۔
-                100% شفافیت: ہر ممبر اپنے موبائل سے ہی اپنا لیجر، جمع شدہ فنڈ کا سٹیٹس، اور فاؤنڈیشن کے قوانین لائیو چیک کر سکتا ہے۔ اب پورا حساب کتاب ہر وقت ہر بھائی کی نظر کے سامنے ہے۔
+                ہم اس فاؤنڈیشن کو صرف اپنے خاندان تک محدود نہیں رکھنا چاہتے۔ ہمارا اصل مقصد اور عزم یہ ہے کہ آگے چل کر ہم اسے باقاعدہ ایک رجسٹرڈ آرگنائزیشن (NGO) بنائیں گے۔
 
                 رمضان المبارک کا خصوصی ہدف (صدقات کے ذریعے امداد)
-                ہم نے یہ نیت اور عزم کیا ہے کہ آنے والے رمضان المبارک سے ہی ہم اس فاؤنڈیشن میں اپنے صدقات کی مدد سے، ہم سے جتنا ہو سکے گا، اتنی زیادہ سے زیادہ فیملیز (خاندانوں) کی بھرپور مدد کریں گے۔ اس مبارک مہینے کی برکت سے ہم فاؤنڈیشن کے دائرے کو مزید وسیع کریں گے تاکہ زیادہ سے زیادہ گھروں میں خوشیاں اور سکون لایا جا سکے۔
-
-                انشا اللہ، ایک دن ہم اپنے اس مقصد میں مکمل کامیاب ہوں گے، بس اس کے لیے آپ سب بھائیوں کا مستقل ساتھ اور تعاون درکار ہے۔
-
-                خصوصی دعا
-                اللہ پاک ہماری اس چھوٹی سی کوشش اور نیت کو اپنی بارگاہ میں قبول و منظور فرمائے، اس میں برکت عطا فرمائے، اور ہم سب کو اس نیک مقصد پر ہمیشہ متحد اور ثابت قدم رہنے کی توفیق عطا فرمائے۔ آمین یا رب العالمین!
+                ہم نے یہ نیت اور عزم کیا ہے کہ آنے والے رمضان المبارک سے ہی ہم اس فاؤنڈیشن میں اپنے صدقات کی مدد سے فیملیز کی بھرپور مدد کریں گے۔
             </p>
         </div>
     </div>
 
-    <!-- Loan List -->
-    <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-        <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fas fa-list text-emerald-700"></i> Loan Takers</h3>
-        <div id="loan-list" class="space-y-3 text-sm text-gray-600">
-             <div class="flex justify-between items-center border-b pb-2"><span>Member </span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
-             <div class="flex justify-between items-center border-b pb-2"><span>Member </span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
-             <div class="flex justify-between items-center border-b pb-2"><span>Member </span><span class="font-semibold text-gray-800">Rs. 0</span><span class="text-green-500 bg-green-50 px-2 py-0.5 rounded-full text-[10px] font-bold">PAID</span></div>
+    <!-- Loan List (Interactive Ledger Table Visual) -->
+    <div class="glass-card p-5 rounded-3xl shadow-sm border border-slate-200/80">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="font-bold text-slate-800 flex items-center gap-2 text-sm"><i class="fas fa-list-check text-brand-600"></i> Loan Ledger Records</h3>
+          <span class="text-[10px] text-slate-400 font-medium">Updated Today</span>
+        </div>
+        <div id="loan-list" class="space-y-2 text-xs">
+             <div class="flex justify-between items-center p-2.5 bg-slate-50/80 rounded-xl border border-slate-100">
+               <div>
+                 <span class="font-semibold text-slate-800 block">Member Record #1</span>
+                 <span class="text-[10px] text-slate-400">Status: Complete</span>
+               </div>
+               <span class="font-semibold text-slate-700">Rs. 0</span>
+               <span class="text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full text-[10px] font-bold">PAID</span>
+             </div>
+             <div class="flex justify-between items-center p-2.5 bg-slate-50/80 rounded-xl border border-slate-100">
+               <div>
+                 <span class="font-semibold text-slate-800 block">Member Record #2</span>
+                 <span class="text-[10px] text-slate-400">Status: Complete</span>
+               </div>
+               <span class="font-semibold text-slate-700">Rs. 0</span>
+               <span class="text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full text-[10px] font-bold">PAID</span>
+             </div>
         </div>
     </div>
 
-    <!-- Loan Rules -->
-    <div class="space-y-3 urdu-text text-right">
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
-            <h3 class="font-bold mb-2">Loan Rules</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے، اور اسے ہم سب نے مل کر- کر کے دکھانا ہے، ان شاء اللہ۔</p>
+    <!-- Loan Rules (Styled Urdu Accordion Layout) -->
+    <div class="space-y-2.5 urdu-text text-right">
+        <div class="glass-card p-5 rounded-3xl border border-slate-200/80">
+            <h3 class="font-bold text-slate-800 mb-1 text-base">قواعد و ضوابط (Loan Rules)</h3>
+            <p class="text-xs text-slate-600">امانت میں خیانت نہیں، ہمارا سب سے پہلا اصول ہے۔ بہترین نظام ہی اصل کامیابی ہے۔</p>
         </div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">دیا گیا قرض 6 ماہ میں آسان اقساط میں واپس کرنا ہو گا۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
-        <div class="bg-white p-4 rounded-xl border border-gray-100 text-sm shadow-sm">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-100 text-xs shadow-sm text-slate-700">دیا گیا قرض 6 ماہ میں آسان اقساط میں واپس کرنا ہو گا۔</div>
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-100 text-xs shadow-sm text-slate-700">پہلے لیا ہوا قرض واپس کیے جانے کے بعد نئی قسط جاری کی جائے گی۔</div>
+        <div class="bg-white p-3.5 rounded-2xl border border-slate-100 text-xs shadow-sm text-slate-700">وفات کی صورت میں دی جانے والی رقم قرض نہیں ہو گی۔</div>
     </div>
 
-    <!-- Loan Application Form -->
-    <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
-        <h3 class="font-bold text-gray-800 mb-4 text-center">Request New Loan</h3>
+    <!-- Loan Application Form with Live Calculator -->
+    <div class="glass-card p-6 rounded-3xl shadow-xl border border-slate-200/80">
+        <h3 class="font-bold text-slate-900 mb-1 text-center">Request Financial Assistance</h3>
+        <p class="text-xs text-slate-400 text-center mb-4">Fill in details to submit application via WhatsApp</p>
+        
         <form id="loanForm" class="space-y-3">
-            <input type="text" id="n" placeholder="Name" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" required>
-            <input type="number" id="a" placeholder="Amount" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" required>
-            <textarea id="r" placeholder="Reason" class="w-full p-3 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none transition" rows="3" required></textarea>
+            <div>
+              <input type="text" id="n" placeholder="Full Name" class="w-full p-3.5 text-xs rounded-2xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:bg-white outline-none transition" required>
+            </div>
             
-            <button type="button" onclick="send(this)" class="w-full bg-emerald-900 hover:bg-emerald-800 text-white p-4 rounded-xl font-bold transition shadow-md">Submit Request</button>
+            <div>
+              <input type="number" id="a" oninput="calculateInstallment(this.value)" placeholder="Loan Amount (PKR)" class="w-full p-3.5 text-xs rounded-2xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:bg-white outline-none transition" required>
+            </div>
+
+            <!-- Dynamic 6-Month Estimate Box -->
+            <div id="calcBox" class="hidden p-3 bg-emerald-50 rounded-xl border border-emerald-100 text-xs text-emerald-800 flex justify-between items-center">
+              <span>Est. 6-Month Installment:</span>
+              <span id="monthlyAmount" class="font-bold text-sm">Rs. 0 / mo</span>
+            </div>
+
+            <div>
+              <textarea id="r" placeholder="Reason for Request" class="w-full p-3.5 text-xs rounded-2xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:bg-white outline-none transition" rows="3" required></textarea>
+            </div>
+            
+            <button type="button" onclick="send(this)" class="w-full bg-brand-600 hover:bg-brand-500 text-white p-4 rounded-2xl font-semibold text-sm transition shadow-lg shadow-brand-600/20 active:scale-[0.98]">
+              Submit Application
+            </button>
         </form>
     </div>
     
-    <!-- Email Display Element -->
-    <div class="text-center pt-2">
-        <a href="mailto:ftcf2026@example.com" class="text-emerald-800 font-semibold flex items-center justify-center gap-2 hover:underline">
-            <i class="fas fa-envelope"></i> ftcf.20@gmail.com
+    <!-- Contact Info -->
+    <div class="text-center pt-1">
+        <a href="mailto:ftcf.20@gmail.com" class="text-xs text-slate-500 font-medium inline-flex items-center gap-2 hover:text-brand-600 transition">
+            <i class="fas fa-envelope text-brand-600"></i> ftcf.20@gmail.com
         </a>
     </div>
 
     <!-- Footer Tag -->
-    <p class="text-center text-[10px] text-gray-400 pt-2">@FTCF2026 - Founders: Mughal Brothers</p>
+    <footer class="text-center pt-2">
+      <p class="text-[10px] text-slate-400 tracking-wider">© 2026 FTCF PORTAL — ALL RIGHTS RESERVED</p>
+    </footer>
   </main>
 
   <script>
+    function toggleMission() {
+      const box = document.getElementById('missionBox');
+      box.classList.toggle('hidden');
+    }
+
+    function calculateInstallment(val) {
+      const box = document.getElementById('calcBox');
+      const target = document.getElementById('monthlyAmount');
+      if (val && val > 0) {
+        box.classList.remove('hidden');
+        const perMonth = Math.round(val / 6);
+        target.innerText = `Rs. ${perMonth.toLocaleString()} / mo`;
+      } else {
+        box.classList.add('hidden');
+      }
+    }
+
     function send(btn) {
       const n = document.getElementById('n').value;
       const a = document.getElementById('a').value;
       const r = document.getElementById('r').value;
       const date = new Date().toLocaleDateString();
 
-      // Validation
       if (!n || !a || !r) {
         alert("Please fill in all fields.");
         return;
       }
 
-      // Loading state
       const originalText = btn.innerText;
       btn.innerText = "Processing...";
       btn.disabled = true;
 
-      const msg = `New Loan Application:%0ADate: ${date}%0AName: ${n}%0AAmount: ${a}%0AReason: ${r}`;
+      const msg = `New Loan Application:%0ADate: ${date}%0AName: ${n}%0AAmount: Rs. ${a}%0AReason: ${r}`;
       window.open(`https://wa.me/923433052346?text=${msg}`, '_blank');
 
-      // Reset
       setTimeout(() => {
         btn.innerText = originalText;
         btn.disabled = false;
         document.getElementById('loanForm').reset();
+        document.getElementById('calcBox').classList.add('hidden');
       }, 2000);
     }
   </script>
 </body>
-              </html>
-              
+</html>
